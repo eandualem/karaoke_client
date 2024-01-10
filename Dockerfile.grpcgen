@@ -1,0 +1,16 @@
+# Dockerfile.grpcgen
+
+FROM python:3.8-slim AS grpcgen
+
+RUN apt-get update && apt-get install -y protobuf-compiler
+
+WORKDIR /app
+
+# Copy requirements and install dependencies
+COPY proto/requirements_grpcgen.txt .
+RUN pip install --no-cache-dir -r requirements_grpcgen.txt
+
+# Copy proto file
+COPY proto .
+RUN chmod +x generate.sh && ./generate.sh
+
