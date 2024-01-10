@@ -17,7 +17,7 @@ The `karaoke_client` is designed to interact with the `AIProcessingService` of t
 #### 1. Clone the Repository:
 
 ```bash
-git clone [repository-url]
+git clone [repository-url](https://github.com/eandualem/karaoke_client)
 cd karaoke_client
 ```
 
@@ -25,8 +25,6 @@ cd karaoke_client
 
 - Place your `certificate.pem` file in the root directory of `karaoke_client`.
 - Ensure the certificate file name matches the one specified in your `.env` file.
-
-The error you're encountering is due to a syntax issue in the Docker run command. It's attempting to find an image named 'proto', which doesn't exist. To resolve this, we should revert to the previous method you mentioned, which correctly uses the `grpc-builder` image to generate the protocol files. Here's the updated instruction for that part:
 
 #### 3. Building Protocol Files:
 
